@@ -39,7 +39,7 @@ class Geocode
 		])->getBody());
 
         # check for status in the response
-		$this->getResponse( $response->status );
+		$this->getResponse( $response );
 
     }
 
@@ -64,7 +64,7 @@ class Geocode
         ])->getBody());
 
         # check for status in the response
-		$this->getResponse( $response->status );
+		$this->getResponse( $response );
 
     }
 	
@@ -90,7 +90,7 @@ class Geocode
         ])->getBody());
 
         # check for status in the response
-        $this->getResponse( $response->status );
+        $this->getResponse( $response );
     }
 
     /**
@@ -98,9 +98,9 @@ class Geocode
      * @param string $status 
      * @return mixed bool/Response
      */
-    public function getResponse($status)
+    public function getResponse($response)
     {
-        switch( $status )
+        switch( $response->status )
         {
             case "ZERO_RESULTS": # indicates that the geocode was successful but returned no results. This may occur if the geocoder was passed a non-existent address.
             case "OVER_QUERY_LIMIT": # indicates that you are over your quota.
