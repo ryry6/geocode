@@ -39,7 +39,7 @@ class Geocode
 		])->getBody());
 
         # check for status in the response
-		$this->getResponse( $response );
+		return $this->getResponse( $response );
 
     }
 
@@ -64,7 +64,7 @@ class Geocode
         ])->getBody());
 
         # check for status in the response
-		$this->getResponse( $response );
+		return $this->getResponse( $response );
 
     }
 	
@@ -90,7 +90,7 @@ class Geocode
         ])->getBody());
 
         # check for status in the response
-        $this->getResponse( $response );
+        return $this->getResponse( $response );
     }
 
     /**
